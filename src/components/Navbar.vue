@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <v-toolbar flat dark color="grey darken-3" >
+        <v-toolbar flat dark color="blue lighten-3" >
             <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
             <v-toolbar-title>Title</v-toolbar-title>
             <v-spacer></v-spacer>
@@ -10,7 +10,7 @@
                 <v-btn flat>Link Three</v-btn>
             </v-toolbar-items>
         </v-toolbar>
-        <v-navigation-drawer app v-model="drawer" class="primary" >
+        <v-navigation-drawer app v-model="drawer" class="blue lighten-3" >
            <v-list>
                <v-list-tile v-for="link in links" :key="link.text" router :to="link.route">
                    <v-list-tile-action>
