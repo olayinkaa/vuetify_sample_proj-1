@@ -8,14 +8,22 @@
         <v-container class="my-5">
             
             <v-layout row class="mb-3">
-                    <v-btn small  dark  color="grey" @click="sortBy('title')">
-                        <v-icon left>folder</v-icon>
-                        <span>By Project Name</span>
-                    </v-btn>
-                    <v-btn small  dark color="grey" @click="sortBy('person')">
-                        <v-icon left>person</v-icon>
-                        <span>By Person</span>
-                    </v-btn>
+                   <v-tooltip top>
+                        <v-btn small  dark  color="grey" @click="sortBy('title')" slot="activator">
+                            <v-icon left>folder</v-icon>
+                            <span>By Project Name</span>
+                        </v-btn>
+                        <span>Sort Project by name</span>
+                   </v-tooltip>
+                   <!--  -->
+                   <v-tooltip top>
+                        <v-btn small  dark  color="grey" @click="sortBy('person')" slot="activator">
+                            <v-icon left>person</v-icon>
+                            <span>By Person</span>
+                        </v-btn>
+                        <span>Sort Project by Person Name</span>
+                   </v-tooltip>
+                   <!--  -->
             </v-layout>
             <v-card class="pa-3"  v-for="project in projects" :key="project.title">
                 <v-layout row wrap :class="`pa-3 ${project.status}`">
