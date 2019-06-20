@@ -8,6 +8,9 @@
                     </v-avatar>
                     <p class="white--text subheading mt-1">Smart Guys</p>
                 </v-flex>
+                <v-flex class="my-3">
+                    <Pop/>
+                </v-flex>
             </v-layout>
            <v-list>
                <v-list-tile v-for="link in links" :key="link.text" router :to="link.route">
@@ -55,8 +58,13 @@
 </template>
 
 <script>
+import Pop from '@/components/Pop.vue'
     export default {
         name:'Navbar',
+        components: {
+
+            Pop
+        },
         data(){
             return {
 
