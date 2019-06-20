@@ -22,10 +22,10 @@
         </v-navigation-drawer>
         <v-toolbar  dark color="blue lighten-3" >
             <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-            <v-toolbar-title>Title</v-toolbar-title>
+            <v-toolbar-title>NEW WINE</v-toolbar-title>
             <v-spacer></v-spacer>
                 <v-toolbar-items class="hidden-sm-and-down">
-                    <v-btn depressed flat color="pink">Link One</v-btn>
+                    <!-- <v-btn depressed flat color="pink">Link One</v-btn> -->
                     <!--  -->
                         <v-menu origin="center center" transition="scale-transition" offset-y>
                                 <template v-slot:activator="{ on }">
@@ -46,8 +46,8 @@
                                 </v-list>
                         </v-menu>
                     <!--  -->
-                    <v-btn flat>Link Two</v-btn>
-                    <v-btn flat>Link Three</v-btn>
+                    <v-btn flat>Blog</v-btn>
+                    <v-btn flat>Reach Us</v-btn>
                 </v-toolbar-items>
         </v-toolbar>
         
