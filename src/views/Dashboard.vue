@@ -1,7 +1,22 @@
 <template>
     <div>
-        <h1 class="subheading grey--text">Dashboard</h1>
+        <v-container>
+            <h1 class="subheading grey--text">Dashboard</h1>
+        </v-container>
+
+      
         <v-container class="my-5">
+            
+            <v-layout row class="mb-3">
+                    <v-btn small  dark  color="grey" @click="sortBy('title')">
+                        <v-icon left>folder</v-icon>
+                        <span>By Project Name</span>
+                    </v-btn>
+                    <v-btn small  dark color="grey" @click="sortBy('person')">
+                        <v-icon left>person</v-icon>
+                        <span>By Person</span>
+                    </v-btn>
+            </v-layout>
             <v-card class="pa-3"  v-for="project in projects" :key="project.title">
                 <v-layout row wrap :class="`pa-3 ${project.status}`">
                     <v-flex xs12 md6>
@@ -41,6 +56,13 @@
                     {title:'Design an API',person:'Ibrahim Olayinka',due:'2th August, 2012',status:'ongoing'},
                     {title:'Deployment of project',person:'Ibrahim Olayinka',due:'5th August, 2012',status:'overdue'}
                 ]
+            }
+        },
+        methods: {
+
+            sortBy(prop){
+
+                this.projects.sort((a,b) => a[prop] < b[prop] ? -1 : 1)
             }
         }
     }
