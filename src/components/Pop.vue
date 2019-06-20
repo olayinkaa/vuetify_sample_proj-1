@@ -9,7 +9,6 @@
           color="blue lighten-2"
           dark
           v-on="on"
-
           large
         >
           ADD NEW PROJECT
