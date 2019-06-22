@@ -39,7 +39,7 @@
                   <v-date-picker v-model="project.due"></v-date-picker>
                 </v-menu>
                 <v-spacer></v-spacer>
-                <v-btn class="blue lighten-1 white--text"@click="submit">
+                <v-btn class="blue lighten-1 white--text" @click="submit">
                     <v-icon>done</v-icon>
                     Add Project
                 </v-btn>
