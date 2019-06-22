@@ -53,16 +53,14 @@
 </template>
 
 <script>
+    import db from '@/fb'
     export default {
         name:'Dashboard',
         data(){
             return{
 
                 projects:[
-                    {title:'Design a website',person:'David james',due:'27th July, 2012',status:'ongoing'},
-                    {title:'Design a Prototype',person:'yusuf Omotayo',due:'2th July, 2012',status:'completed'},
-                    {title:'Design an API',person:'Ibrahim Olayinka',due:'2th August, 2012',status:'ongoing'},
-                    {title:'Deployment of project',person:'Ibrahim Olayinka',due:'5th August, 2012',status:'overdue'}
+                    
                 ]
             }
         },
@@ -72,6 +70,24 @@
 
                 this.projects.sort((a,b) => a[prop] < b[prop] ? -1 : 1)
             }
+        },
+        created(){
+
+            db.collection('vuetify-sample-proj').onSnapshot(res=>{
+
+                const changes = res.docChanges();
+                changes.forEach(change=>{
+
+                    if(change.type==='added'){
+
+                            this.projects.push({
+
+                                ...change.doc.data(),
+                                id:change.doc.id
+                            })
+                    }
+                })
+            })           
         }
     }
 </script>
